@@ -1,0 +1,63 @@
+---
+interface Props {
+	name?: string;
+	image?: string;
+}
+const { name='empty' , image='' } = Astro.props;
+import IconDefault from '../icons/IconDefault.astro'
+---
+<div class="skill-card-container">
+    <div class="skill-card-image">
+        <IconDefault />
+        <img id="skillIcon" src={image}>
+    </div>
+    <div class="skill-card-name">
+        <h4>{name}</h4>
+    </div>
+</div>
+<style>
+    .skill-card-container {
+        background-color: #E6E2D9;
+        border-radius: 25px;
+        height: 140px;
+        width: 110px;
+    }
+    .skill-card-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+    }
+    .skill-card-image img {
+        max-height: 70px;
+        width: auto;
+    }
+    .skill-card-name {
+        background-color: #46463A;
+        height: 40px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .skill-card-name h4 {
+        margin: 0;
+        color: #E6E2D9;
+    }
+</style>
+<script define:vars={{image}}>
+    const defaultIcon = document.getElementById('defaultIcon');
+    const skillIcon = document.getElementById('skillIcon');
+    if (defaultIcon && skillIcon) {
+        if (image != '') {
+            defaultIcon.style.display = 'none';
+            skillIcon.style.display = 'block';
+        } else {
+            defaultIcon.style.display = 'block';
+            skillIcon.style.display = 'none';
+        }
+    } else {
+        console.error('No se encontraron los elementos defaultIcon o skillIcon en el DOM.');
+    }
+</script>

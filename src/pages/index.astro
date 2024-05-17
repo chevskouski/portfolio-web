@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Home from '../sections/Home.astro';
+import Projects from '../sections/Projects.astro';
+import About from '../sections/About.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="noname">
+	<main>
+		<Navbar />
+		<div class="content-card">
+			<Home />
+			<Projects />
+			<About />
+		</div>
+		<Footer />
+	</main>
+</Layout>
+
+<style>
+	.content-card {
+		margin-top: 100px;
+		margin-left: 25%;
+		margin-right: 25%;
+		background-color: #F7F6F1;
+		border-radius: 25px;
+		padding: 50px;
+	}
+</style>

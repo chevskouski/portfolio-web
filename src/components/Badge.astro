@@ -1,0 +1,52 @@
+---
+interface Props {
+    info?: Array<Array<string>>
+}
+const { info } = Astro.props;
+
+---
+<ul class="badge-ul">
+    {info?.map((item) => (
+        <li class="badge-li">
+            <div class="badge-container">
+                <img src={item[1]} id="badgeImage">
+                <h6>
+                    {item[0]}
+                </h6>
+            </div>
+        </li>
+    ))}
+</ul>
+<style>
+    .badge-ul {
+       display: flex; 
+       flex-wrap: wrap;
+       list-style: none;
+       gap: 5px;
+       padding-inline-start: 0px;
+       margin: 0;
+    }
+    .badge-li {
+        text-decoration: none;
+    }
+    .badge-container {
+        background-color: #46463A;
+        border-radius: 25px;
+        height: 20px;
+        width:fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 5px;
+    }
+    .badge-container h6 {
+        margin: 0;
+        color: #E6E2D9;
+    }
+    #badgeImage {
+        height: 15px;
+        width: auto;
+    }
+</style>

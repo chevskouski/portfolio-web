@@ -1,0 +1,49 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import Title from "../components/Title.astro";
+---
+<section id="projects">
+    <Title title='Projects'/>
+    <div class="projects-container">
+        <ProjectCard 
+            title="Lorem Ipsum Doloris"
+            dataBadges={
+                [
+                    ["JavaScript", "./public/js.svg"],
+                    ["Boostrap", "./public/boostrap.svg"]
+                ]
+            }
+            desciption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec tortor tortor. Donec quam nisi, iaculis eu sollicitudin id, venenatis eu lacus. Aliquam commodo hendrerit bibendum..."
+            image=""
+        />
+        <ProjectCard 
+            title="Lorem Ipsum Doloris"
+            dataBadges={
+                [
+                    ["JavaScript", "./public/js.svg"],
+                    ["Boostrap", "./public/boostrap.svg"]
+                ]
+            }
+            desciption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec tortor tortor. Donec quam nisi, iaculis eu sollicitudin id, venenatis eu lacus. Aliquam commodo hendrerit bibendum..."
+        />
+        <ProjectCard 
+            title="Lorem Ipsum Doloris"
+            dataBadges={
+                [
+                    ["JavaScript", "./public/js.svg"],
+                    ["Boostrap", "./public/boostrap.svg"]
+                ]
+            }
+            desciption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec tortor tortor. Donec quam nisi, iaculis eu sollicitudin id, venenatis eu lacus. Aliquam commodo hendrerit bibendum..."
+        />
+    </div>
+</section>
+
+<style>
+    .projects-container{
+        background-color: #E6E2D9;
+        border-radius: 25px;
+        width: 844px;
+        height: auto;
+    }
+</style>

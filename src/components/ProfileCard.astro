@@ -1,0 +1,67 @@
+---
+interface Props {
+	name: string;
+    profilePicture?: string;
+	lastName?: string;
+	shortDescription?: string;
+}
+const { name , lastName , profilePicture="" , shortDescription } = Astro.props;
+import IconNoProfile from '../icons/IconNoProfilePic.astro';
+---
+<div class="home-profile-container">
+    <div class="home-profile-container-2">
+        <div class="home-profile-picture-container">
+            <IconNoProfile />
+            <img id="profileIcon" src={profilePicture}>
+        </div>
+        <h1 class="home-profile-name">
+            {name} <br>
+            {lastName}
+        </h1>
+    </div>
+    <p class="home-profile-description">
+        {shortDescription}
+    </p>
+</div>
+<style>
+    .home-profile-container-2 {
+        display: flex;
+        align-items: center;
+    }
+    .home-profile-picture-container {
+        height: 120px;
+        width: 120px;
+        border-radius: 25px;
+        background-color: #D9D9D9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-profile-picture-container img {
+        height: 120px;
+        width: 120px;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+    .home-profile-description {
+        font-size: 22px;
+        color: #46463A;
+        max-width:60%;
+
+    }
+    .home-profile-name {
+        font-size: 32px;
+        font-weight: bold;
+        color: #46463A;
+        margin-left: 20px;
+    }
+</style>
+<script define:vars={{profilePicture}}>
+    if (profilePicture != "") {
+        noProfileIcon.style.display = 'none';
+        profileIcon.style.display = 'block';
+    } else {
+        noProfileIcon.style.display = 'block';
+        profileIcon.style.display = 'none';
+    }
+</script>

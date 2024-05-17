@@ -1,0 +1,26 @@
+---
+import Button from '../components/Button.astro';
+import SkillCard from '../components/SkillCard.astro';
+import ProfileCard from '../components/ProfileCard.astro';
+import Title from '../components/Title.astro';
+---
+<section id="home">
+    <ProfileCard name='Lorem' lastName='impsum' profilePicture='' shortDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec tortor tortor. Donec quam nisi, iaculis eu sollicitudin.' />
+    <Button title="LinkedIn" link="#" />
+    <Button title="Github" link="#"  />
+    <Button title="Contact" link="#" />
+    <Title title='Skills' />
+    <div class="home-skills-container">
+        <SkillCard />
+        <SkillCard />
+        <SkillCard />
+        <SkillCard />   
+    </div>
+</section>
+<style>
+    .home-skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12.33px;
+    }
+</style>

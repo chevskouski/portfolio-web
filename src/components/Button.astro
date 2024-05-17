@@ -1,0 +1,22 @@
+---
+interface Props {
+	title: string;
+	link?: string;
+	hexcolor?: string;
+	textcolor?: string;
+}
+const { title, link='#' , hexcolor = '#FB8F72' , textcolor = '#761C0A'} = Astro.props;
+---
+<a class="main-button" href={link}>
+	{title}
+</a>
+<style define:vars={{hexcolor, textcolor}}>
+	.main-button {
+		background-color: var(--hexcolor);
+		color: var(--textcolor);
+		border-radius: 50px;
+		padding: 5px 15px;
+		text-decoration: none;
+		margin-right: 10px;
+	}
+</style>

@@ -1,0 +1,39 @@
+---
+import Title from "../components/Title.astro"
+---
+<section id="about">
+    <div>
+        <div class="about-container">
+                <div class="about-description">
+                    <Title title="About me"/> 
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nec tortor tortor. Donec quam nisi, iaculis eu sollicitudin id, venenatis eu lacus. Aliquam commodo hendrerit bibendum. 
+                        <br><br>
+                        Donec aliquet facilisis lacus vitae blandit. Mauris non lorem vel augue interdum porttitor sit amet non massa. Curabitur rhoncus dignissim risus sed tristique. Morbi facilisis eget magna in vestibulum. 
+                    </p>
+                </div>
+            <div class="about-image">
+                {/*{image ? <img id="projectCardImage" src={image} /> : <IconDefaultProject hexColor='#2D3D3B' />} */}
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .about-container {
+        display: flex;
+    }
+    .about-description {
+        width: 65%;
+        padding-right: 20px;
+    }
+    .about-description p {
+        font-size: 18px;
+    }
+    .about-image {
+        margin-top: 50px;
+        border-radius: 25px;
+        width: 35%;
+        height: auto;
+        background-color: #D9D9D9;
+    }
+</style>

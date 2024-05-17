@@ -1,0 +1,69 @@
+---
+interface Props {
+    title: string;
+    image?:string;
+    dataBadges?: Array<Array<string>>;
+    desciption?: string;
+}
+const { dataBadges , desciption , title , image='' } = Astro.props;
+import Badge from './Badge.astro';
+import Button from './Button.astro';
+import IconDefaultProject from '../icons/IconDefaultProject.astro';
+import Divisor from '../components/Divisor.astro'
+---
+<div class="project-card-container">
+    <div class="project-card-image">
+        {image ? <img id="projectCardImage" src={image} /> : <IconDefaultProject hexColor='#2D3D3B' />}
+    </div>
+    <div class="project-card-info">
+        <h3 class="project-card-title">
+            {title}
+        </h3>
+        <Badge info={dataBadges} />
+        <div class="project-card-description">
+            <p>{desciption}</p>
+        </div>
+        <Button title='Code' />
+        <Button title='Preview' hexcolor='#59726F' textcolor='#2D3D3B'/>
+    </div>
+</div>
+<Divisor />
+<style>
+    .project-card-container {
+        display: flex;
+        background-color: #E6E2D9;
+        max-width: 844px;
+        padding: 50px;
+        border-radius: 25px;
+    }
+    .project-card-title {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: x-large;
+        color: #46463A;
+    }
+    .project-card-description p {
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .project-card-info{
+        max-width: 55%;
+        margin-left: 20px;
+    }
+    .project-card-image {
+        width: 45%;
+        height: auto;
+        background-color: #59726F;
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #projectCardImage {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px; 
+        object-fit: cover;
+    }
+</style>
