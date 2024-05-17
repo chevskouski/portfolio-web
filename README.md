@@ -1,15 +1,17 @@
 # Portfolio
 
-This web portfolio template is inspired by Material You design, offering a modern and customizable experience to elegantly showcase your work. Developed with Astro, HTML5, CSS3, and JavaScript, this template provides a solid foundation for creating a professional and visually appealing portfolio.
+This web portfolio template with a minimalist design, offering a modern and customizable experience to elegantly showcase your work. Developed with Astro, HTML5, CSS3, and JavaScript, this template provides a solid foundation for creating a professional and visually appealing portfolio.
 
 <p align="center">
   <img align="center" alt="Astro" src="https://github.com/chevskouski/portfolio-web/blob/main/public/landing-1.jpeg"/>
 </p>
 
+[![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
+
 ## ⚒️ In Progress
--   Responsive layout
--   Light and dark theme selector
--   Simple way to customize landing colors
+- [ ] Responsive layout
+- [ ] Light and dark theme selector
+- [ ] Simple way to customize landing colors
 
 ## 👷‍♂️ Getting Started
 Clone this repository to your local machine.
