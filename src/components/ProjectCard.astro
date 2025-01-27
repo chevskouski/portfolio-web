@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import defaultImage from "@assets/default-image.webp";
+
 interface TechItems {
 	label: string;
 }
@@ -6,7 +9,7 @@ interface TechItems {
 interface Props {
 	title: string;
 	description: string;
-	image?: string;
+	imageSrc?: string;
 	imageAlt?: string;
 	codeHref?: string;
 	previewHref?: string;
@@ -16,8 +19,8 @@ interface Props {
 const {
 	title,
 	description,
-	image,
-	imageAlt,
+	imageSrc = defaultImage.src,
+	imageAlt = "Portada",
 	codeHref,
 	previewHref,
 	techItems,
@@ -25,7 +28,8 @@ const {
 ---
 <div class="border-[#666666] border-2 rounded-md">
   <div class="grid grid-cols-3">
-    <div class="bg-[#666666] w-auto col-span-1">
+    <div class="bg-[#666666] col-span-1">
+      <img src={imageSrc} alt={imageAlt} class="object-scale-down w-full h-full rounded-t-md">
     </div>
     <div class="w-max-1/2 col-span-2 p-2">
       <h1 class=" font-semibold">{title}</h1>

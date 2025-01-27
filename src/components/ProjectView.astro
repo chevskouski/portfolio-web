@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import defaultImage from "@assets/default-image.webp";
+
 interface Props {
 	description: string;
 	imgSrc?: string;
@@ -6,12 +9,18 @@ interface Props {
 	codeHref?: string;
 	previewHref?: string;
 }
-const { description, imgSrc, imgAlt, codeHref, previewHref } = Astro.props;
+const {
+	description,
+	imgSrc = defaultImage.src,
+	imgAlt = "",
+	codeHref,
+	previewHref,
+} = Astro.props;
 ---
 <div class="bg-backGray rounded-md px-1.5 col-span-3 row-span-3">
   <div class="mt-1.5 rounded-t-md bg-[#666666] w-auto h-32">
-    <img class="object-cover rounded-t-md" src={imgSrc} alt={imgAlt}>
-  </div>
+    <img src={imgSrc} alt={imgAlt} class="object-scale-down w-full h-full rounded-t-md">
+  </div>  
   <div class="mb-1.5 rounded-b-md">
     <p>
       {description}
