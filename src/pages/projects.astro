@@ -1,6 +1,58 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import ProjectCard from "@components/ProjectCard.astro";
 ---
 <Layout>
-<h1 class="text-5xl mt-10">Próximamente</h1>
+  <div class="mt-10 space-y-4">
+    <ProjectCard 
+    title="3D Viwer" 
+    description="Visualizador 3D desarrollado utilizando React y JavaScript, que permite cargar y visualizar modelos 3D en formato .obj. Esta herramienta ofrece la funcionalidad de rotar el modelo en 360 grados."
+    techItems={[
+      {label:"React"},
+      {label:"Tailwind"},
+      {label:"Javascript"}
+      ]}
+    codeHref="https://github.com/chevskouski/myGameTimeProject"
+    />
+    <ProjectCard 
+    title="PWA + Webservices" 
+    description="aplicación web progresiva que simula el proceso operativo de una aduana, permitiendo recibir la información de los productos a través de un web service. Gracias a esta integración, la aplicación es capaz de generar de manera automática un manifiesto de los productos recibidos, el cual se puede exportar en formato PDF."
+    techItems={[
+      {label:"HTML"},
+      {label:"CSS"},
+      {label:"PHP"},
+      {label:"Javascript"},
+      {label:"MySQL"},
+      ]}
+    codeHref="https://github.com/chevskouski/myGameTimeProject"
+    />
+    <ProjectCard 
+    title="Plataforma de E-commerce con Gestión Administrativa" 
+    description="El proyecto consiste en un e-comerce con una tienda para visualizar productos y contactar a la tienda, y un área administrativa que requiere inicio de sesión, para gestionar productos y usuarios a travez de un CRUD y Permitiendo el envío de correos."
+    techItems={[
+      {label:"HTML"},
+      {label:"CSS"},
+      {label:"PHP"},
+      {label:"Javascript"},
+      {label:"MySQL"},
+      ]}
+    codeHref="https://github.com/chevskouski/myGameTimeProject"
+    />
+  <ProjectCard 
+  title="Simulador de un Compilador" 
+  description="Simulador de compilador hecho en C# que muestra caracteres, flujo de caracteres, y las líneas y columnas de Código y detecta errores en el codigo. Incluye una interfaz responsive para adaptarse a diferentes dispositivos"
+  techItems={[
+    {label:"C#"}
+    ]}
+  codeHref="https://github.com/chevskouski/proyecto_compiladores"
+  />
+  <ProjectCard 
+  title="Calculadora Científica" 
+  description="Calculadora científica hecha en C# que permite realizar operaciones matemáticas avanzadas como trigonometría, logaritmos, exponentes y funciones estadísticas."
+  techItems={[
+    {label:"C#"}
+    ]}
+  codeHref="https://github.com/chevskouski/proyectoCalculadora"
+  />
+</div>
 </Layout>

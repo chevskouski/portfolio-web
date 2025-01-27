@@ -1,0 +1,53 @@
+---
+interface TechItems {
+	label: string;
+}
+
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+	imageAlt?: string;
+	codeHref?: string;
+	previewHref?: string;
+	techItems?: TechItems[];
+}
+
+const {
+	title,
+	description,
+	image,
+	imageAlt,
+	codeHref,
+	previewHref,
+	techItems,
+} = Astro.props;
+---
+<div class="border-[#666666] border-2 rounded-md">
+  <div class="grid grid-cols-3">
+    <div class="bg-[#666666] w-auto col-span-1">
+    </div>
+    <div class="w-max-1/2 col-span-2 p-2">
+      <h1 class=" font-semibold">{title}</h1>
+      <p class="text-sm mt-1.5">{description}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="m-1.5 flex justify-between">
+    <div class="flex flex-wrap gap-1">
+      {techItems ? (
+      techItems.map((item) =>(
+        <p class="bg-backGray rounded-md px-1.5">{item.label}</p>
+        ))
+      ): null}
+    </div>
+    <div class="text-sm gap-1">
+      {codeHref ? (
+        <a class="inline-block border-[#666666] border-2 hover:bg-[#666666] hover:text-lightGray rounded-sm px-1.5" href={codeHref}>↳ Código</a>
+      ) : null }
+      {previewHref ? (
+        <a class="inline-block border-[#666666] border-2 hover:bg-[#666666] hover:text-lightGray rounded-sm px-1.5" href={previewHref}>↳ Preview</a>
+      ) : null }
+    </div>
+  </div>
+</div>
