@@ -1,0 +1,16 @@
+---
+interface SkillItem {
+	label: string;
+}
+
+interface Props {
+	skillItems: SkillItem[];
+}
+
+const { skillItems } = Astro.props;
+---
+{
+  skillItems.map((item) =>(
+  <p class="bg-backGray rounded-md px-1.5">{item.label}</p>
+  ))
+}

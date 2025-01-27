@@ -1,0 +1,28 @@
+---
+interface Props {
+	description: string;
+	imgSrc?: string;
+	imgAlt?: string;
+	codeHref?: string;
+	previewHref?: string;
+}
+const { description, imgSrc, imgAlt, codeHref, previewHref } = Astro.props;
+---
+<div class="bg-backGray rounded-md px-1.5 col-span-3 row-span-3">
+  <div class="mt-1.5 rounded-t-md bg-[#666666] w-auto h-32">
+    <img class="object-cover rounded-t-md" src={imgSrc} alt={imgAlt}>
+  </div>
+  <div class="mb-1.5 rounded-b-md">
+    <p>
+      {description}
+    </p>
+    <div class="flex justify-end text-sm my-2 gap-1">
+      {codeHref ? (
+        <a class="inline-block border-[#666666] border-2 hover:bg-[#666666] hover:text-lightGray rounded-sm px-1.5" href={codeHref}>↳ Código</a>
+      ) : null }
+      {previewHref ? (
+        <a class="inline-block border-[#666666] border-2 hover:bg-[#666666] hover:text-lightGray rounded-sm px-1.5" href={previewHref}>↳ Preview</a>
+      ) : null }
+    </div>
+  </div>
+</div>

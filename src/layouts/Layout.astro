@@ -1,5 +1,15 @@
 ---
 import "@styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+
+const navItems = [
+	{ label: "[@ Kevin]", href: "/" },
+	{ label: "[▼ CV]", href: "/cv" },
+	{ label: "[⧯ Proyectos]", href: "/projects" },
+	{ label: "[> Github]", href: "https://github.com/chevskouski" },
+];
 ---
 <!doctype html>
 <html lang="es_MX">
@@ -8,8 +18,13 @@ import "@styles/global.css";
 		<meta name="description" content="Kevin Secay, portafolio web">
 		<meta name="viewport" content="width=device-width" />
 		<title>Kevin Secay</title>
+		<ClientRouter />
 	</head>
-	<body>
+	<body class="bg-ligthGray text-darkGray flex justify-center p-16">
+		<div class="max-w-xl min-w-xl">
+			<Header navItems={navItems} />
 		<slot />
+		<Footer />
+		</div>
 	</body>
 </html>

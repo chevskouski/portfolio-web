@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import profilePic from "@assets/profile.webp";
+import EducationCard from "@components/EducationCard.astro";
+import ProjectView from "@components/ProjectView.astro";
+import SkillCard from "@components/SkillCard.astro";
+import Layout from "src/layouts/Layout.astro";
+
+const SkillItems = [
+	{ label: "HTML" },
+	{ label: "CSS" },
+	{ label: "PHP" },
+	{ label: "JavaScript" },
+	{ label: "TypeScript" },
+	{ label: "C#" },
+	{ label: "Astro" },
+	{ label: "React" },
+	{ label: "Laravel" },
+	{ label: "MySQL" },
+	{ label: "SQL" },
+	{ label: "Tailwind" },
+	{ label: "Git" },
+];
+---
+<Layout>
+  <div class="flex justify-between mt-10">
+    <div>
+      <h1 class="text-2xl">Kevin Secay Estrada</h1>
+      <h2 class="text-sm mt-2">Ingeniero en Sistemas y Ciencias de la Computación</h2>
+      <h3 class="text-green text-xs" transition:name="city">Mixco, GT</h3>
+      <ul class="flex text-sm mt-2 gap-1 text-green">
+        <li><a href="">[Contacto]</a></li>
+        <li><a href="">[Linkedin]</a></li>
+        <li><a href="">[RSS]</a></li>
+      </ul>
+    </div>
+    <Image 
+        transition:name="img-profile"
+        class={"max-w-28"} 
+        src={profilePic} 
+        alt={"profile"}/>
+  </div>
+  <div class="mt-10 space-y-4">
+    <h1 class="text-2xl">Educación ▼</h1>
+    <EducationCard name="Ingeniería en Sistemas y Ciencias de la Computación" year="2020-2024" institution="Universidad San Pablo de Guatemala" />
+    <h1 class="text-2xl">Certificados</h1>
+    <EducationCard name="IT Essentials" year="2019" institution="Cisco" />
+    <EducationCard name="Reparación y Mantenimiento de Equipos Informáticos" year="2019" institution="Intecap" />
+    <h1 class="text-2xl mt-10">Skills ▼</h1>
+    <div class="flex flex-wrap gap-1">
+      <SkillCard skillItems={SkillItems} />
+    </div>
+  </div>
+  <div>
+    <h1 class="text-2xl mt-10">Ultimos Proyectos ▼</h1>
+    <div class="grid grid-cols-7 grid-rows-3 gap-2 mt-4">
+      <ProjectView description="Biblioteca de logos SVG de las marcas más populares. Creado desde cero con Next.js, React y Tailwind CSS." codeHref="/" previewHref="/projects"/>
+      <ProjectView description="Biblioteca de logos SVG de las marcas más populares. Creado desde cero con Next.js, React y Tailwind CSS." previewHref="/projects" imgSrc="/project-test.webp"/>
+      <a class="bg-backGray rounded-md px-1.5 col-span-1 row-span-1 hover:bg-green" href="/projects">
+      <span class="text-7xl leading-none">≥</span> 
+      <span class="text-sm">Ver Más</span></a>
+    </div>
+  </div>
+</Layout>

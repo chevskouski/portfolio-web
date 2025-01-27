@@ -1,1 +1,19 @@
 @import "tailwindcss";
+@theme {
+	--color-lightGray: #eeeeee;
+	--color-darkGray: #333333;
+	--color-backGray: #cccccc;
+	--color-tan: #d9c9b6;
+	--color-green: #8aa788;
+	--color-orange: #ffa133;
+}
+
+@font-face {
+	font-family: "DepartureMono";
+	src: url("../assets/DepartureMono-Regular.woff2") format("woff2"),
+		url("../assets/DepartureMono-Regular.woff") format("woff");
+}
+
+body {
+	font-family: "DepartureMono", sans-serif;
+}

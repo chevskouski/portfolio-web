@@ -1,0 +1,25 @@
+---
+interface NavItems {
+	label: string;
+	href: string;
+}
+
+interface Props {
+	navItems: NavItems[];
+}
+
+const { navItems } = Astro.props;
+---
+<nav>
+  <ul class="flex flex-wrap gap-x-4">
+    {
+      navItems.map((item) => (
+        <li>
+          <a class="text-[16.5px] leading-[21px] transition-colors duration-[75ms] [transition-timing-function:cubic-bezier(.36,2.09,.07,-1.52)] hover:bg-green hover:text-current" href={item.href}>
+            {item.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
