@@ -1,18 +1,36 @@
 ---
-import Layout from "src/layouts/Layout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
+import Layout from "src/layouts/Layout.astro";
 ---
 <Layout>
   <div class="mt-10 space-y-4">
     <ProjectCard 
     title="3D Viwer" 
-    description="Visualizador 3D desarrollado utilizando React y JavaScript, que permite cargar y visualizar modelos 3D en formato .obj. Esta herramienta ofrece la funcionalidad de rotar el modelo en 360 grados."
+    description="Visualizador 3D desarrollado utilizando React y JavaScript, que permite visualizar modelos 3D con la funcionalidad de rotar el modelo en 360 grados."
     techItems={[
       {label:"React"},
       {label:"Tailwind"},
       {label:"Javascript"}
       ]}
+      imageAlt="3D Viwer"
+      imageSrc="/viewer.webp"
+      previewHref="https://viwer-archive.secay.me/"
     codeHref="https://github.com/chevskouski/sio-project-viwer"
+    />
+    <ProjectCard 
+    title="Plataforma de E-commerce con Gestión Administrativa" 
+    description="El proyecto consiste en un e-comerce con una tienda para visualizar productos y contactar a la tienda, y un área administrativa que requiere inicio de sesión, para gestionar productos y usuarios a travez de un CRUD y Permitiendo el envío de correos."
+    techItems={[
+      {label:"HTML"},
+      {label:"CSS"},
+      {label:"PHP"},
+      {label:"Javascript"},
+      {label:"MySQL"},
+      ]}
+    imageSrc="/project2img.webp"
+    imageAlt="Plataforma de E-commerce con Gestión Administrativa"
+    previewHref="https://mgt-archive.secay.me/"
+    codeHref="https://github.com/chevskouski/myGameTimeProject"
     />
     <ProjectCard 
     title="PWA + Webservices" 
@@ -27,20 +45,6 @@ import ProjectCard from "@components/ProjectCard.astro";
     imageSrc="/adn.webp"
     imageAlt="PWA + WebServices"
     codeHref="https://github.com/chevskouski/stw_proyecto_adn"
-    />
-    <ProjectCard 
-    title="Plataforma de E-commerce con Gestión Administrativa" 
-    description="El proyecto consiste en un e-comerce con una tienda para visualizar productos y contactar a la tienda, y un área administrativa que requiere inicio de sesión, para gestionar productos y usuarios a travez de un CRUD y Permitiendo el envío de correos."
-    techItems={[
-      {label:"HTML"},
-      {label:"CSS"},
-      {label:"PHP"},
-      {label:"Javascript"},
-      {label:"MySQL"},
-      ]}
-    imageSrc="mgt.webp"
-    imageAlt="Plataforma de E-commerce con Gestión Administrativa"
-    codeHref="https://github.com/chevskouski/myGameTimeProject"
     />
   <ProjectCard 
   title="Simulador de un Compilador" 
